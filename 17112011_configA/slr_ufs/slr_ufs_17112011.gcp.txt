@@ -1,0 +1,7 @@
+POINT_X	POINT_Y	POINT_Z	PIXEL_COL	PIXEL_ROW	GCPname
+648687.48	5252600.95	2825.94	1022	414	SFK_NE_slope_LWD_pillar_at_surface
+648613.64	5251948.51	2745.31	179	786	Northern_Wetterspitze_summit_N
+648717.31	5252487.00	2855.37	704	341	SFK_summit_LWD_pillar_at_surface
+648609.41	5252944.59	2718.15	2275	777	upper_lift_house_NE_at_surface
+648580.36	5252863.73	2757.35	2040	637	house_betw_SFK_summit_a_upper_lift_SE_corner
+648529.86	5252792.81	2832.05	1930	390	SFK_summit_lift_house_SE_corner

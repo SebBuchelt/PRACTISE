@@ -1,3 +1,13 @@
+# Ignore folders and files
+/20111117
+/dem/dem_1m_sfk.txt
+/landsat/le7_17112011/data
+/landsat/le7_17112011/fmask_3_3_0_95/*
+!/landsat/le7_17112011/fmask_3_3_0_95/empty
+/landsat/le7_17112011/look
+/photos
+*_githubignore.m
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
