@@ -22,5 +22,5 @@ Input_PRACTISE_m='..\17112011_configA\Input_17112011_A'; % uncomment/comment in 
 % Input_PRACTISE_m='..\17112011_configB\Input_17112011_B'; % uncomment/comment in case
 
 % Load the input m-file
-Input_PRACTISE_m=Unix_Slash_PRACTISE(Input_PRACTISE_m)                     %KEEP
+Input_PRACTISE_m=Unix_Slash_PRACTISE(Input_PRACTISE_m);                    %KEEP
 run(Input_PRACTISE_m)                                                      %KEEP
