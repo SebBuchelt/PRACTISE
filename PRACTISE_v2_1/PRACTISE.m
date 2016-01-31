@@ -894,6 +894,7 @@ else
             if gcpP_0_dummy==0
                 gcpRMSE_0=gcpRMSE_orig;
                 gcpP_0=gcpP;
+                X_0=X0;
 %               save original camera parameters (incl. altitude)
                 [cam_0, cam_rc_0]=Cam_PRACTISE(cam, headerv_W, ...
                  demWrcz, cam_off);
@@ -1046,6 +1047,9 @@ else
                 case 'Yes using new optimised values'
                     if gcpRMSE_opt<gcpRMSE_orig
                         gcpRMSE_dummy=gcpRMSE_orig;
+                        cam_dummy=cam_orig;
+                        cam_rc_dummy=cam_rc_orig;
+                        X0_dummy=X0;
                     end
                     os_startval='y';
                     os_quest=2;
@@ -1144,6 +1148,9 @@ else
                     if exist('gcpRMSE_dummy', 'var') && ...
                      gcpRMSE_opt==gcpRMSE_orig
                         gcpRMSE_orig=gcpRMSE_dummy;
+                        cam_orig=cam_dummy;
+                        cam_rc_orig=cam_rc_dummy;
+                        X0=X0_dummy;
                     end
                     os_intact='n';
 %           forward new parameters to existing variables
@@ -1192,7 +1199,7 @@ else
 end
 clear UBD LBD os_intact os_startval os_quest oscs_ok1 os_ok2 proxy_n ...
  button gcpRMSE_count gcpRMSE_dummy gcpRMSE_Xopttemp gcpRMSE_opttemp ...
- gcpRMSE_gcpPtemp gcpRMSE_optrow os_MarkSiz
+ gcpRMSE_gcpPtemp gcpRMSE_optrow X0_dummy cam_dummy cam_rc_dummy os_MarkSiz
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% viewshed %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % calculate camera parameters (raster position and altitude)
 [cam, cam_rc]=Cam_PRACTISE(cam, headerv_W, demWrcz, cam_off);
@@ -2522,7 +2529,7 @@ for photoloop=1:N_images
             end
             if gcpRMSE_orig~=gcpRMSE_0
                 save([fout_folder, fout_mat], 'gcpRMSE_0', 'gcpP_0', ...
-                 'cam_0', 'cam_rc_0', '-append');            
+                 'X_0', 'cam_0', 'cam_rc_0', '-append');            
             end
             if os==3
                save([fout_folder, fout_mat], 'gcpRMSE_optthres', ...
