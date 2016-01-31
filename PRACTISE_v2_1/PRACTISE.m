@@ -2298,7 +2298,7 @@ for photoloop=1:N_images
             'Snow (satellite image)');
         else
             Leg=legend('Snow (photo)', 'No snow (photo)', ...
-            'Snow (satellite image)', 'Satellite image mask');
+            'Satellite image mask', 'Snow (satellite image)');
         end
         if IsOctave_PRACTISE()
             set(Leg, 'Color', [0.75 0.75 0.75], 'Location', 'SouthOutside')
