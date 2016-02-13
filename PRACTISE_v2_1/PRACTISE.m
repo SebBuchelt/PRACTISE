@@ -934,23 +934,23 @@ else
         %
         image(photo, 'Parent', axes1);                                                    
         hold on        
-        plot(gcpW(4,:)+0.5, gcpW(5,:)+0.5, 'gx', 'LineWidth', 2, 'MarkerSize', os_MarkSiz+2)
+        plot(gcpW(4,:), gcpW(5,:), 'gx', 'LineWidth', 2, 'MarkerSize', os_MarkSiz+2)
         if os>1
             if gcpP_0_dummy==0
-                fig1h1=plot(gcpP_0(1,:)+0.5, gcpP_0(2,:)+0.5, 'o', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz);
+                fig1h1=plot(gcpP_0(1,:), gcpP_0(2,:), 'o', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz);
                 if IsOctave_PRACTISE()
                     set (fig1h1, 'MarkerSize', os_MarkSiz+8)
                 end
             elseif gcpP_0_dummy==1
-                fig1h2=plot(gcpP_0(1,:)+0.5, gcpP_0(2,:)+0.5, 'o', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz+4);
+                fig1h2=plot(gcpP_0(1,:), gcpP_0(2,:), 'o', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz+4);
                 if IsOctave_PRACTISE()
                     set (fig1h2, 'MarkerSize', os_MarkSiz+8)
                 else
-                    plot(gcpP_orig(1,:)+0.5, gcpP_orig(2,:)+0.5, 'o', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz);
+                    plot(gcpP_orig(1,:), gcpP_orig(2,:), 'o', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz);
                 end
             end
         end
-        fig1h=plot(gcpP(1,:)+0.5, gcpP(2,:)+0.5, '.', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz);
+        fig1h=plot(gcpP(1,:), gcpP(2,:), '.', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz);
         if os==1
             Leg=legend('GCP positions', 'Calculated GCP positions');
         elseif os>1
@@ -1015,7 +1015,7 @@ else
                             'Ok');
                     end
                     delete(fig1h);
-                    plot(gcpP(1,:)+0.5, gcpP(2,:)+0.5, '.', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz)
+                    plot(gcpP(1,:), gcpP(2,:), '.', 'MarkerEdgeColor', [1 0 0], 'MarkerSize', os_MarkSiz)
                     set(figure1, 'visible', 'on');
                     button=questdlg('Do you want to run the optimisation again?', ...
                         'GCPs and DDS optimisation', 'Yes using start values', ...
@@ -1605,7 +1605,7 @@ for photoloop=1:N_images
         i=find(isnan(rgbimage(1,:)));
         rgbimage(:,i)=[];
 %           extract pixel positions outside of the excluded photograph areas 
-%         i=find(demP(1,:)<405 & demP(1,:)>385 & demP(2,:)<pix_r & demP(2,:)>0);
+%         i=find((demP(1,:)>800 | demP(1,:)<400) & demP(2,:)<pix_r & demP(2,:)>0);
 %         demW(:,i)=[];
 %         demP(:,i)=[];
 %         rgbimage(:,i)=[];
@@ -2378,7 +2378,7 @@ for photoloop=1:N_images
 %   write
 %       Arc/Info ASCII Grids
     if headerv_W(6,1)<=2 && headerv_W(6,1)>=-1
-        header_W(6,:)=cellstr('NODATA_value  -9999')
+        header_W(6,:)=cellstr('NODATA_value  -9999');
         headerv_W(6,1)=-9999;
     end
 %           photograph
