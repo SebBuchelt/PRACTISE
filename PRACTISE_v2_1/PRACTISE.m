@@ -923,7 +923,7 @@ else
             set(figure1, 'NumberTitle', 'off', 'Name', 'GCPs and DDS optimisation', 'visible', 'off');
         end
         set(figure1, 'Color', [1 1 1], 'InvertHardcopy', 'off');
-        axes1 = axes('FontSize', 15.91, 'FontWeight', 'demi', ...%'Layer', 'top',...  %????? is that needed for Matlab
+        axes1 = axes('FontSize', 15.91, ...%'Layer', 'top',...  %????? is that needed for Matlab
           'TickDir', 'out', 'XAxisLocation', 'top', 'YDir', 'reverse', ...
           'DataAspectRatio', [1 1 1], 'Parent', figure1);
         axis(axes1, [0.5 pix_c+0.5 0.5 pix_r+0.5]);
@@ -1769,7 +1769,7 @@ for photoloop=1:N_images
             end
             set(figure2, 'NumberTitle', 'off', 'Name', 'Blue band histogram');
             set(figure2, 'Color', [1 1 1], 'InvertHardcopy', 'off');
-            axes1 = axes('FontSize', 15.76, 'FontWeight', 'demi', ...%'Layer', 'top',...  %????? is that needed for Matlab
+            axes1 = axes('FontSize', 15.76, ...%'Layer', 'top',...  %????? is that needed for Matlab
                 'TickDir', 'out', 'XTick', [0 25 50 75 100 125 150 175 200 225 250], ...
                 'Parent', figure2);
             xlabel(axes1, 'Digital Number', 'FontSize', 18.185);
@@ -1815,7 +1815,7 @@ for photoloop=1:N_images
             set(figure4, 'NumberTitle', 'off', 'Name', 'Automatic blue band + pca snow cover classification');
         end
         set(figure4, 'Color', [1 1 1], 'InvertHardcopy', 'off');
-        axes1 = axes('FontSize', 15.91, 'FontWeight', 'demi', ...%'Layer', 'top', ... %????? is that needed for Matlab
+        axes1 = axes('FontSize', 15.91, ...%'Layer', 'top', ... %????? is that needed for Matlab
             'TickDir', 'out', 'XAxisLocation', 'top', 'YDir', 'reverse', ...
             'DataAspectRatio', [1 1 1], 'Parent', figure4);
         axis(axes1, [0.5 pix_c+0.5 0.5 pix_r+0.5]);
@@ -2251,7 +2251,7 @@ for photoloop=1:N_images
             set(figure5, 'NumberTitle', 'off', 'Name', 'Optimised snow cover map of preprocessed NDSI data');
         end
         set(figure5, 'Color', [1 1 1], 'InvertHardcopy', 'off');
-        axes1 = axes('FontSize', 15.91, 'FontWeight', 'demi', ...%'Layer', 'top', ... %????? is that needed for Matlab
+        axes1 = axes('FontSize', 15.91, ...%'Layer', 'top', ... %????? is that needed for Matlab
             'TickDir', 'out', 'XAxisLocation', 'top', 'YDir', 'reverse', ...
             'DataAspectRatio', [1 1 1], 'Parent', figure5);
         axis(axes1, [min(satBBlong(1,:))-0.5 max(satBBlong(1,:))+0.5 ...
