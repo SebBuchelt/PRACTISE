@@ -926,6 +926,7 @@ else
         axes1 = axes('FontSize', 15.91, 'TickDir', 'out', ...
           'XAxisLocation', 'top', 'YDir', 'reverse', ...
           'DataAspectRatio', [1 1 1], 'Parent', figure1);
+		if ~IsOctave_PRACTISE()
 			set(axes1, 'FontWeight', 'demi')
 		end
         axis(axes1, [0.5 pix_c+0.5 0.5 pix_r+0.5]);
@@ -1774,6 +1775,7 @@ for photoloop=1:N_images
 			axes1 = axes('FontSize', 15.91, 'TickDir', 'out', ...
 			  'XAxisLocation', 'top', 'YDir', 'reverse', ...
 			  'DataAspectRatio', [1 1 1], 'Parent', figure2);
+			if ~IsOctave_PRACTISE()
 				set(axes1, 'FontWeight', 'demi')
 			end
             xlabel(axes1, 'Digital Number', 'FontSize', 18.185);
@@ -1822,6 +1824,7 @@ for photoloop=1:N_images
         axes1 = axes('FontSize', 15.91, 'TickDir', 'out', ...
           'XAxisLocation', 'top', 'YDir', 'reverse', ...
           'DataAspectRatio', [1 1 1], 'Parent', figure4);
+		if ~IsOctave_PRACTISE()
 			set(axes1, 'FontWeight', 'demi')
 		end
         axis(axes1, [0.5 pix_c+0.5 0.5 pix_r+0.5]);
@@ -2260,6 +2263,7 @@ for photoloop=1:N_images
         axes1 = axes('FontSize', 15.91, 'TickDir', 'out', ...
           'XAxisLocation', 'top', 'YDir', 'reverse', ...
           'DataAspectRatio', [1 1 1], 'Parent', figure5);
+		if ~IsOctave_PRACTISE()
 			set(axes1, 'FontWeight', 'demi')
 		end
         axis(axes1, [min(satBBlong(1,:))-0.5 max(satBBlong(1,:))+0.5 ...
