@@ -1773,7 +1773,6 @@ for photoloop=1:N_images
             set(figure2, 'NumberTitle', 'off', 'Name', 'Blue band histogram');
             set(figure2, 'Color', [1 1 1], 'InvertHardcopy', 'off');
 			axes1 = axes('FontSize', 15.91, 'TickDir', 'out', ...
-			  'XAxisLocation', 'top', 'YDir', 'reverse', ...
 			  'DataAspectRatio', [1 1 1], 'Parent', figure2);
 			if ~IsOctave_PRACTISE()
 				set(axes1, 'FontWeight', 'demi')
@@ -1957,7 +1956,7 @@ for photoloop=1:N_images
         end
     end
     clear cs_intact button cs_quest cs_title cs_answ1 cs_answ2 cs_answ3 ...
-        cs_enter cs_def maw_dummy oscs_ok1 oscs_ok1_dummy cs_MarkSiz cs_MarkSiz2
+        cs_enter cs_def maw_dummy oscs_ok1 oscs_ok1_dummy cs_MarkSiz2
 %   remote sensing classification
     if rs>0
         toc
