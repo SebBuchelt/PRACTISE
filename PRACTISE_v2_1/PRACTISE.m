@@ -162,10 +162,10 @@ end
 if is == 0
     disp('- classify a single image')
 elseif is == 1
-    if rs > 0 || os > 0 || vs == 1
+    if rs > 0 || os > 1
         disp(['- classify a single image with automatically derived ', ...
          'file name'])
-    elseif rs == 0 && os == 0 && vs == 0
+    elseif rs == 0 && os <= 1
         disp(['- classify all ', fin_imformat(2:end), '-images in ''', ...
          fin_folder, fin_imfolder, ''''])
     end
@@ -321,12 +321,10 @@ if exist('fin_imfolder', 'var')
                     end
                     fclose(fid);
                 end
-                if length(list)>1 && (rs>0 || vs==1 || os>1)
-                    error(['Optimising the camera location and ', ...
-                     'orientation using GCPs or generating ', ...
-                     'viewsheds or classifying satellite images ', ...
-                     'while processing more than one image does ', ...
-                     'not work.'])              
+                if length(list)>1 && (rs>0 || os>1)
+                    error(['Optimising the camera location and orientation ', ...
+                     'using GCPs or classifying satellite images while ', ...
+                     'processing more than one image does not work.'])              
                 end
                 for i=1:length(list)
                     fin_images{i,1}=list(i).name;
@@ -2410,7 +2408,7 @@ for photoloop=1:N_images
     clear i fid 
     dlmwrite([fout_folder, fout_classW_asc], classW, 'delimiter', ' ', '-append')
 %               viewshed
-    if vs==1
+    if vs==1 && photoloop==1
         viewW(classW(:,:)==headerv_W(6,1))=headerv_W(6,1);
         fid=fopen([fout_folder, fout_viewW_asc], 'w');
         if fid==-1
