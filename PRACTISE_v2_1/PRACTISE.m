@@ -321,11 +321,11 @@ if exist('fin_imfolder', 'var')
                     end
                     fclose(fid);
                 end
-                if length(list)>1 && (rs>0 || vs==1 || os>0)
-                    error(['Checking the accuracy of or optimising the ', ...
-                     'camera location and orientation using GCPs or ', ...
-                     'generating viewsheds or classifying satellite ', ...
-                     'images while processing more than one image does ', ...
+                if length(list)>1 && (rs>0 || vs==1 || os>1)
+                    error(['Optimising the camera location and ', ...
+                     'orientation using GCPs or generating ', ...
+                     'viewsheds or classifying satellite images ', ...
+                     'while processing more than one image does ', ...
                      'not work.'])              
                 end
                 for i=1:length(list)
@@ -2350,7 +2350,7 @@ for photoloop=1:N_images
     end
 %       figures
 %           GCPs (and DDS optimisation)
-    if os==1
+    if os==1 && photoloop==1
         fout_figname1=[f_name, '_GCPs'];
     elseif os==2 || os==3
         fout_figname1=[f_name, '_GCPs_DDS_opti'];
@@ -2463,7 +2463,7 @@ for photoloop=1:N_images
     disp(['load(''', fout_folder, fout_mat, ''')']) 
 %       Matlab/Octave figures
 %           photograph
-    if os>0
+    if os>1 || (os==1 && photoloop==1)
 %               GCPs (and DDS optimisation)
         if IsOctave_PRACTISE()
             hgsave(figure(1), [fout_folder, fout_figname1, '.ofig']);
