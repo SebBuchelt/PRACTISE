@@ -118,14 +118,15 @@ end                                                                        %KEEP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Camera parameters
 %   view position 
-%       longitude and latitude [m]
-cam(:,1)=[6.4929997e+05; 5.25335826e+06]; % altitude will be calculated!
+%       longitude and latitude [m], altitude will be calculated!
+cam(:,1)=[6.4929997e+05; 5.25335826e+06];
 %       buffer zone around camera location (no sight barriers)
 if vs==1                                                                   %KEEP
     buffer_radius=250; % in  [m]    
 end                                                                        %KEEP
-%   target position (longitude and latitude [m])
-cam(:,2)=[6.4874085e+05, 5.25277133e+06]; % altitude will be calculated!
+%   target position 
+%		longitude and latitude [m], altitude will be calculated!
+cam(:,2)=[6.4874085e+05, 5.25277133e+06];
 %   offset height of viewpoint and targetpoint [m]
 cam_off=[1.5, 0]; 
 %   properties
