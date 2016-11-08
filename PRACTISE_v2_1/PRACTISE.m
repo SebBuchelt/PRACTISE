@@ -1771,7 +1771,7 @@ for photoloop=1:N_images
             set(figure2, 'NumberTitle', 'off', 'Name', 'Blue band histogram');
             set(figure2, 'Color', [1 1 1], 'InvertHardcopy', 'off');
 			axes1 = axes('FontSize', 15.91, 'TickDir', 'out', ...
-			  'DataAspectRatio', [1 1 1], 'Parent', figure2);
+			  'Parent', figure2);
 			if ~IsOctave_PRACTISE()
 				set(axes1, 'FontWeight', 'demi')
 			end
